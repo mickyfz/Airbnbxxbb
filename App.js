@@ -3,6 +3,7 @@ import {View, Text, StyleSheet,Button, TextInput,SafeAreaView} from 'react-nativ
 
 
 import HomeScreenbb from "./srcy/screensy/HomeScreeny";
+import Postbb from "./srcy/componentsy/Posty";
 const App = () => {
 // const App: () => React$Node = () => {
 
@@ -10,12 +11,12 @@ const App = () => {
 return (
   <>
   <SafeAreaView>
-    <HomeScreenbb/>
+    {/* <HomeScreenbb/> */}
+    <Postbb/>
   </SafeAreaView>
   </>
   )
 } 
-
 
 
 
