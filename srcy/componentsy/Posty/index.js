@@ -3,8 +3,9 @@ import React from 'react'
 import stylesbb from './stylesy'
 
 const Postbb = (propsy) => {
-  const propbb=propsy['feedy'][2];
-  console.log('propy',propbb);
+  // const propbb=propsy['feedy'][2];
+  const propbb=propsy.feedy;
+  // console.log('propy',propbb);
   return (
     <View style={stylesbb.containery}>
       {/* SECTION:  Image  */}

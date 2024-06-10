@@ -4,8 +4,10 @@ import { View, Text, ImageBackground, Pressable,TouchableOpacity } from 'react-n
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import stylesbb from './stylesy';
+import {  useNavigation } from '@react-navigation/native'
 
 const HomeScreenbb = () => {
+  const navigation = useNavigation()
   return (
   
     <View >
@@ -39,7 +41,8 @@ const HomeScreenbb = () => {
 
 
        {/* SECTION:Search Button */}
-      <Pressable style={stylesbb.searchBtn} onPress={()=>console.warn('Searchbuttony bb')}>
+      {/* <Pressable style={stylesbb.searchBtn} onPress={()=>console.warn('Searchbuttony bb')}> */}
+      <Pressable style={stylesbb.searchBtn} onPress={()=>navigation.navigate('DstSrchNm')}>
           <Fontisto name="search" size={25} color={'#f15454'} />
           <Text style={stylesbb.searchBtnTxt}>Where are you going baby?</Text>
         </Pressable>
