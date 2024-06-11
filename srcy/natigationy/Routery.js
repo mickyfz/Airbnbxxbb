@@ -14,14 +14,15 @@ const Routerbb = () => {
   return (
     <NavigationContainer>
     <Stackbb.Navigator>
-      <Stackbb.Screen name='HomeNm' component={HomeTabNavigatorbb}
+      <Stackbb.Screen name='HomeTabNm' component={HomeTabNavigatorbb}
       options={{
         headerShown: false,
       }}
       />
                         {/* By default, it shows the screen automatically that on the top, like here, login kk is on the top and it will display automatically by default */}
-      <Stackbb.Screen name='GuestNm' component={GuestScrnbb} />
-      <Stackbb.Screen name='DstSrchNm' component={DestinationSearchScrnbb} />
+      <Stackbb.Screen name='GuestNm' component={GuestScrnbb} options={{title:'Number of Guest'}}/>    
+                                                             {/* all titles are given by  me  baby*/}
+      <Stackbb.Screen name='DstSrchNm' component={DestinationSearchScrnbb} options={{title:''}} />
       <Stackbb.Screen name='PostNm' component={Postbb} />
 
     </Stackbb.Navigator>

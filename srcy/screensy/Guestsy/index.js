@@ -51,7 +51,17 @@ const GuestScrnbb = () => {
           justifyContent:'center',
           alignItems:'center',
           borderRadius:15
-      }} onPress={()=>navigation.navigate('HomeNm')}>
+      }} 
+      // My version own explore: GENIUS:
+      onPress={()=>navigation.navigate('SrchRsltNm')}     
+      
+      // His version...BOTH works baby
+      // onPress={()=>navigation.navigate('HomeTabNm', {
+      //     screen: 'ExploreNm',
+      //     params: { screen: 'SrchRsltNmbb' }
+      //   })
+      // }
+      >
         {/* <Button title='Search' style={{marginHorizontal:20,backgroundColor:'red'}}/> */}
         <Text style={{color:'white',fontWeight:'bold',fontSize:30}} > Search </Text>
       </Pressable>
