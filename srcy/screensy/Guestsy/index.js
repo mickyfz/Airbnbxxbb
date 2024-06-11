@@ -53,12 +53,12 @@ const GuestScrnbb = () => {
           borderRadius:15
       }} 
       // My version own explore: GENIUS:
-      onPress={()=>navigation.navigate('SrchRsltNm')}     
-      
+      onPress={()=>navigation.navigate('SrchRsltTabNm')}     
+
       // His version...BOTH works baby
       // onPress={()=>navigation.navigate('HomeTabNm', {
       //     screen: 'ExploreNm',
-      //     params: { screen: 'SrchRsltNmbb' }
+      //     params: { screen: 'SrchRsltTabNm' }
       //   })
       // }
       >

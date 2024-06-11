@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreenbb from '../screensy/HomeScreeny';
 import SearchResultScrnbb from '../screensy/SearchResultsy';
+import SearchResultsTabNavigatorbb from './SearchResultsTabNavigatory';
 
 
 const Stackbb = createNativeStackNavigator();
@@ -17,7 +17,7 @@ const ExploreNavigatorbb = () => {
                 headerShown: false,
             }}/>
 
-            <Stackbb.Screen name='SrchRsltNm' component={SearchResultScrnbb} options={{title:'Destinations'}}       
+            <Stackbb.Screen name='SrchRsltTabNm' component={SearchResultsTabNavigatorbb} options={{title:'Destinations'}}       
                                                     // all titles are given by  me
                                     // after going `SearchResultScrnbb` if we press back it will go to 
             />         

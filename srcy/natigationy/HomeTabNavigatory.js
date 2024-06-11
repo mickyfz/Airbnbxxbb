@@ -1,7 +1,5 @@
-import React,{useState} from 'react';
-import {View, Text, StyleSheet,Button, TextInput} from 'react-native';
+import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreenbb from '../screensy/HomeScreeny';
 
