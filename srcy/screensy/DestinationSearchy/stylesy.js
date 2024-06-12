@@ -2,9 +2,10 @@
  import { StyleSheet } from 'react-native';
 const stylesbb = StyleSheet.create({
   containery:{
-    margin:20
+    margin:20,
     // padding:20
-    
+    backgroundColor:'white',     // By the Default Google, giving some different color
+    height:'100%'
   },
   inputTexty:{
     // marginBottom:10,
@@ -16,8 +17,9 @@ const stylesbb = StyleSheet.create({
     padding:16,
     // justifyContent:'center',
     alignItems:'center',
-    borderBottomWidth:0.4,
+    borderBottomWidth:0.8,
     borderColor:'lightgrey',
+
   },
   iconContainer:{
     backgroundColor:'#f1f1f1',

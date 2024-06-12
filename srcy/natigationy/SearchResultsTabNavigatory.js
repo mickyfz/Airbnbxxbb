@@ -2,6 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import {  createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import SearchResultScrnbb from '../screensy/SearchResultsy';
+import SearchResultsMapbb from '../screensy/SearchResultsMapy';
 
 const Taby = createMaterialTopTabNavigator();
 
@@ -25,7 +26,7 @@ const SearchResultsTabNavigatorbb = () => {
    }}
       > 
     <Taby.Screen name='list' component={SearchResultScrnbb} />
-    <Taby.Screen name='Map' component={SearchResultScrnbb} />
+    <Taby.Screen name='Map' component={SearchResultsMapbb} />
  
   </Taby.Navigator>
   )
