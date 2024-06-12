@@ -8,6 +8,7 @@ const PostCarouselItemCompbb = (propsy) => {
                     // You’re getting the current width of the mobile screen, which is dynamically updated on orientation change (when the device is rotated). This allows you to create responsive designs that adapt to different screen sizes and orientations. The width value is the screen’s width in pixels.
   // const propbb=propsy['feedy'][2];
   const propbb=propsy.feedy;
+  // console.log(widthbb);
   // console.log('propy',propbb);
 
   return (

@@ -3,19 +3,22 @@ import { StyleSheet } from 'react-native';
 const stylesbb = StyleSheet.create({
   
   containery:{  
-    position:'absolute',
-    bottom:6,
+    // If we give her we only going to see one element.
+        // position:'absolute',
+        // bottom:6,
+
     padding:5,
+    height:120,
     
     // https://10015.io/tools/react-native-shadow-generator generated 'react native shadow generator'
-      shadowColor: "#000000",
-      shadowOffset: {
-        width: 0,
-        height: 4,
-      },
-      shadowOpacity:  0.19,
-      shadowRadius: 5.62,
-      elevation: 6
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    shadowOpacity:  0.21,
+    shadowRadius: 8.19,
+    elevation: 11
   },
   innerContainery:{
     flexDirection:'row',
@@ -26,7 +29,7 @@ const stylesbb = StyleSheet.create({
 
   img:{ 
     height:'100%',
-    aspectRatio:1,
+    aspectRatio:1,      // means width===height ...1/1 also can be writen there
     // borderRadius:20      // It actually cropped the image. and look weired baby own explore:
   },
   bedroms: {

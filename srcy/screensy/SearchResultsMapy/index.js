@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react'
-import { View } from 'react-native';
+import { View,FlatList,useWindowDimensions } from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import Placesbb from '../../../assetsy/data/feed';
 import CustomMarkerCompbb from '../../componentsy/CustomMarkerCompy';
 import PostCarouselItemCompbb from '../../componentsy/PostCarouselItemCompy';
 const SearchResultsMapbb = () => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+    const widthbb = useWindowDimensions().width;
 
   return (
 
@@ -37,7 +38,27 @@ const SearchResultsMapbb = () => {
       )}
 
       </MapView>
-      <PostCarouselItemCompbb feedy={Placesbb[0]} />
+
+      <View  style={{position: 'absolute', bottom: 10}}>
+        <FlatList
+        data={Placesbb}    
+        renderItem={({item})=>(
+          <PostCarouselItemCompbb feedy={item} />
+        )}
+        keyExtractor={itz=>itz.idy} 
+
+        horizontal                      // horizontal={true}: This property instructs the <FlatList> to render the list items horizontally instead of the default vertical orientation. This creates a carousel-like effect.
+        showsHorizontalScrollIndicator={false}                   //showsHorizontalScrollIndicator={false}: This property hides the default horizontal scroll indicator that appears at the bottom of the list when there's more content than can be displayed on the screen. Since you might have custom scroll behavior, hiding this indicator provides a cleaner visual experience.
+
+        // GO TO😝-->:code stepbystep - [ANSWER-9::](#answer-9) 
+        snapToInterval={widthbb - 60}
+        snapToAlignment={"center"}
+        decelerationRate={"fast"}
+
+        />
+      </View>
+
+    
     </View>
   )
 }
