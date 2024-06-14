@@ -1,13 +1,21 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image,Pressable } from 'react-native'
 import React from 'react'
 import stylesbb from './stylesy'
+import { useNavigation } from '@react-navigation/native';
 
 const Postbb = (propsy) => {
   // const propbb=propsy['feedy'][2];
   const propbb=propsy.feedy;
   // console.log('propy',propbb);
+
+  const navigation = useNavigation();
+
+  const goToDetailPostPagebb = () => {
+    navigation.navigate('PostDtlNm', {postIdpp: propbb.idy});
+  }
+
   return (
-    <View style={stylesbb.containery}>
+    <Pressable onPress={goToDetailPostPagebb} style={stylesbb.containery}>
       {/* SECTION:  Image  */}
       <Image source={{uri:propbb.image}} style={stylesbb.img}/>
 
@@ -33,7 +41,7 @@ const Postbb = (propsy) => {
 
       {/*  SECTION:   Total price */}
       <Text style={stylesbb.totalPrice}> ${propbb.totalPrice} total </Text>
-    </View>
+    </Pressable>
   )
 }
 

@@ -1,6 +1,7 @@
-import { View, Text, Image,useWindowDimensions } from 'react-native'
+import { View, Text, Image,useWindowDimensions, Pressable } from 'react-native'
 import React from 'react'
 import stylesbb from './stylesy'
+import { useNavigation } from '@react-navigation/native';
 
 // copied from ---> Posty
 const PostCarouselItemCompbb = (propsy) => {
@@ -10,9 +11,15 @@ const PostCarouselItemCompbb = (propsy) => {
   const propbb=propsy.feedy;
   // console.log(widthbb);
   // console.log('propy',propbb);
+  const navigation = useNavigation();
+
+  const goToDetailPostPagebb = () => {
+    navigation.navigate('PostDtlNm', {postIdpp: propbb.idy});
+  }
+
 
   return (
-    <View style={[stylesbb.containery,{width:widthbb-60}]}>
+    <Pressable  onPress={goToDetailPostPagebb} style={[stylesbb.containery,{width:widthbb-60}]}>
       <View style={stylesbb.innerContainery}>
 
           {/* SECTION:  Image  */}
@@ -46,7 +53,7 @@ const PostCarouselItemCompbb = (propsy) => {
         </View>
 
       </View>
-    </View>
+    </Pressable>
   )
 }
 

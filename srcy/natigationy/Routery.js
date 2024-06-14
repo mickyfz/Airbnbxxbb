@@ -8,6 +8,7 @@ import GuestScrnbb from '../screensy/Guestsy';
 import DestinationSearchScrnbb from '../screensy/DestinationSearchy';
 import Postbb from '../componentsy/Posty';
 import SearchResultsMapbb from '../screensy/SearchResultsMapy/';
+import PostDetailScreenbb from '../screensy/PostDetailScreeny';
 
 const Stackbb = createNativeStackNavigator();
 
@@ -15,8 +16,9 @@ const Routerbb = () => {
   return (
     <NavigationContainer>
     <Stackbb.Navigator>
-      {/* <Stackbb.Screen name='HomeTabNm' component={HomeTabNavigatorbb} */}
-      <Stackbb.Screen name='HomeTabNm' component={SearchResultsMapbb}       // development easy giving here
+      <Stackbb.Screen name='HomeTabNm' component={HomeTabNavigatorbb}
+      // {/* <Stackbb.Screen name='HomeTabNm' component={SearchResultsMapbb}       // development easy giving here */}
+      // {/* <Stackbb.Screen name='HomeTabNm' component={PostDetailScreenbb}       // development easy giving here */}
       options={{
         headerShown: false,
       }}
@@ -26,6 +28,7 @@ const Routerbb = () => {
                                                              {/* all titles are given by  me  baby*/}
       <Stackbb.Screen name='DstSrchNm' component={DestinationSearchScrnbb} options={{title:''}} />
       <Stackbb.Screen name='PostNm' component={Postbb} />
+      <Stackbb.Screen name='PostDtlNm' component={PostDetailScreenbb} />
 
     </Stackbb.Navigator>
   </NavigationContainer>
