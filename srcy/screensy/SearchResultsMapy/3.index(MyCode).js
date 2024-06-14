@@ -151,7 +151,7 @@ const SearchResultsMapbb = () => {
 
         // GO TO😝-->:code stepbystep - [ANSWER-9::](#answer-9) 
         // snapToInterval={screenWidthbb - 60}
-        snapToAlignment={"center"}           // it doesn't matter here
+        snapToAlignment={"center"}
         decelerationRate={"fast"}
 
         viewabilityConfig={
@@ -162,14 +162,6 @@ const SearchResultsMapbb = () => {
 
 
         snapToInterval={ITEM_WIDTH}
-        contentContainerStyle={{ paddingHorizontal: (screenWidthbb - ITEM_WIDTH) / 2
-            // ,backgroundColor:'blue'         // just for testing bb
-        }}       // 400-340=60 /2=30 ...left and right side will get 30 padding
-
-        getItemLayout={(data, index) => (
-            { length: ITEM_WIDTH, offset: ITEM_WIDTH * index, index }
-        )}
-                // GO TO😝-->:D:\Coding Playground\Extra code\not just dev Extra Code\Airbnb Clone Explanation code\2.getItemLayout.md
         />
      
       </View>

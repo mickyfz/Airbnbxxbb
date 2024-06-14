@@ -7,7 +7,7 @@ import HomeTabNavigatorbb from './HomeTabNavigatory';
 import GuestScrnbb from '../screensy/Guestsy';
 import DestinationSearchScrnbb from '../screensy/DestinationSearchy';
 import Postbb from '../componentsy/Posty';
-import SearchResultsMapbb from '../screensy/SearchResultsMapy';
+import SearchResultsMapbb from '../screensy/SearchResultsMapy/';
 
 const Stackbb = createNativeStackNavigator();
 

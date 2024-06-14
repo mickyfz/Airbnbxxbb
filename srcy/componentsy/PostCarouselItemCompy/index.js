@@ -22,7 +22,7 @@ const PostCarouselItemCompbb = (propsy) => {
 
 
         <View style={{
-          flex:1,   // Because of it, we are able to see the full text, otherwise it was being overflowed hidden.
+          flex:1,   // Because of it, we are able to see the full text, otherwise it was being overflowed hidden..... Vista so much time to learn it GO TO😝-->: Extra code\React native Extra Code\3.flex;1bb.js
           
           marginHorizontal:10}}>
 

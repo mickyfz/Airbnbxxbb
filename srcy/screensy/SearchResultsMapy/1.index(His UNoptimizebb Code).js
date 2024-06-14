@@ -1,7 +1,5 @@
 
-// console.log([...Array(Placesbb.length)].map((_, i) => i * ITEM_WIDTH));
-
-import React, { useState,useRef,useEffect,useMemo,useCallback } from 'react'
+import React, { useState,useRef,useEffect, } from 'react'
 import { View,FlatList,useWindowDimensions } from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import Placesbb from '../../../assetsy/data/feed';
@@ -13,50 +11,24 @@ import { debounce } from 'lodash';
 const SearchResultsMapbb = () => {
   
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
-    const screenWidthbb = useWindowDimensions().width;
-    
+    const widthbb = useWindowDimensions().width;
     const flatlistRefy = useRef();      //If you forget then    GO TO😝-->:CodestepbyStep codebb\61\App.js
     const mapRefy = useRef();
 
     const viewConfigbb = useRef({itemVisiblePercentThreshold: 70})
-    const ITEM_WIDTH = screenWidthbb - 60;
 
-    // const onViewChangedFuncbb = useRef((
-    //   // {viewableItemsy}) => {     // you Cannot give any other name then `viewableItems`..... errorx:  TypeError: Cannot read property 'length' of undefined,
-    //   {viewableItems}) => { 
-    //     console.log('under View');
-    //     // console.log('viewableItemsy--',viewableItems);
-    //   if (viewableItems.length > 0) {    // that means we are seeing atleat 1 item in the screen
-    //     const selectedPlacey = viewableItems[0].item;
-    //     // console.log('selectedPlacey',selectedPlacey);
-    //     console.log('selectedPlacey id',selectedPlacey.idy);
-    //     setSelectedPlaceId(selectedPlacey.idy);
-    //   }
-    // })
-
-       // Debounce the onViewChanged function
-       const debouncedOnViewChanged = useRef(
-         debounce(
-          ({ viewableItems }) => {
-            if (viewableItems.length > 0) {
-              const selectedPlacey = viewableItems[0].item;
-              if (selectedPlaceId !== selectedPlacey.idy) {     // add a check to ensure that the selectedPlaceId is only updated if it is different from the current one. This can help to avoid redundant state updates and re-renders...if we are not on `scrollToIndex()` mejj
-
-                setSelectedPlaceId(selectedPlacey.idy);
-                console.log('actual view changed',selectedPlacey.idy,'--------------------------------------');
-              }
-            }
-        }
-        , 300)       // I did this because If you see his score, you might see that if you click one mark or it selecting. selecting another marker after that because when viewchanged(scrollToIndex) it changing `setSelectedPlaceId`. So that's why it for some time
-    ).current;
-
-    const onViewChangedFuncbb = useRef(
-      (info) => {
-      console.log('view changed')
-        debouncedOnViewChanged(info);
-    }
-  
-  );
+    const onViewChangedFuncbb = useRef((
+      // {viewableItemsy}) => {     // you Cannot give any other name then `viewableItems`..... errorx:  TypeError: Cannot read property 'length' of undefined,
+      {viewableItems}) => { 
+        console.log('under View');
+        // console.log('viewableItemsy--',viewableItems);
+      if (viewableItems.length > 0) {    // that means we are seeing atleat 1 item in the screen
+        const selectedPlacey = viewableItems[0].item;
+        // console.log('selectedPlacey',selectedPlacey);
+        console.log('selectedPlacey id',selectedPlacey.idy);
+        setSelectedPlaceId(selectedPlacey.idy);
+      }
+    })
 
 
     
@@ -65,12 +37,12 @@ const SearchResultsMapbb = () => {
       if (!selectedPlaceId || !flatlistRefy.current || !mapRefy.current) {    // chatgpt:: Sometimes the map reference (mapRefy) might not be available immediately. Ensure it is properly set before attempting to animate.
         return;
       }
-      console.log('selectedPlaceId',selectedPlaceId  );
+      console.log('selectedPlaceId',selectedPlaceId ,'--------------' );
       const index = Placesbb.findIndex(place => place.idy === selectedPlaceId)     // to Understand GO TO😝-->: Extra code\Javascript Extra Code\2bb.js
 
       if (index !== -1) {    // own explore: that means no idy match
         console.log('Matched');
-        flatlistRefy.current.scrollToIndex({index,animated: true})
+        flatlistRefy.current.scrollToIndex({index})
 
         const selectedPlacey = Placesbb[index];
         const region = {
@@ -80,28 +52,15 @@ const SearchResultsMapbb = () => {
           longitudeDelta: 0.8,
         }
         mapRefy.current.animateToRegion(region);
-        // animateToRegionbb(region)
-        console.log('under scrollbb'  );
+      
+        console.log('under scroll','--------------------------------------');
+
     }
     }, [selectedPlaceId])     // when `selectedPlaceId` update this useeffect will trigger bb
 
 
-    // const debouncedOnPressbb = useRef(debounce((id) => {
-    //     setSelectedPlaceId(id);
-    // }, 300)).current;
-    const debouncedOnPressbb = useMemo(() => debounce((id) => {
-      setSelectedPlaceId(id);
-        console.log('debouncedOnPressbb');
-    }, 300), []);
 
-    // const animateToRegionbb = useCallback((region) => {
-    //   if (mapRefy.current) {
-    //     mapRefy.current.animateToRegion(region, 1000); // Smooth animation
-    //   }
-    // }, []);
 
-    // Memoize the markers data to prevent re-renders
-  const markersMemoy = useMemo(() => Placesbb, [Placesbb]);
   return (
 
     <View>
@@ -119,15 +78,14 @@ const SearchResultsMapbb = () => {
     >
 
       {/* We are not putting code here so that it looks clean. */}
-      {/* {Placesbb.map(placey => ( */}
-      {markersMemoy.map(placey => (
+      {Placesbb.map(placey => (
           <CustomMarkerCompbb
           key={placey.idy}
           coordinate={placey.coordinate}
           price={placey.newPrice}
           isSelected={placey.idy === selectedPlaceId}
 
-          onPressff={() => debouncedOnPressbb(placey.idy)}
+          onPressff={() => setSelectedPlaceId(placey.idy)}
 
           // onPressff={() =>{ setSelectedPlaceId(placey.idy);}}
           // onPress={() =>{ setSelectedPlaceId(placey.idy); console.log('idy  ',selectedPlaceId,typeof(setSelectedPlaceId)); console.log('idy2 ',placey.idy,typeof(placey.idy));console.log(placey.idy === selectedPlaceId);}}
@@ -150,8 +108,8 @@ const SearchResultsMapbb = () => {
         showsHorizontalScrollIndicator={false}                   //showsHorizontalScrollIndicator={false}: This property hides the default horizontal scroll indicator that appears at the bottom of the list when there's more content than can be displayed on the screen. Since you might have custom scroll behavior, hiding this indicator provides a cleaner visual experience.
 
         // GO TO😝-->:code stepbystep - [ANSWER-9::](#answer-9) 
-        // snapToInterval={screenWidthbb - 60}
-        snapToAlignment={"center"}           // it doesn't matter here
+        snapToInterval={widthbb - 60}
+        snapToAlignment={"center"}
         decelerationRate={"fast"}
 
         viewabilityConfig={
@@ -161,17 +119,7 @@ const SearchResultsMapbb = () => {
         onViewableItemsChanged={onViewChangedFuncbb.current}      // if we scroll and see different carosoul items this function will trigger
 
 
-        snapToInterval={ITEM_WIDTH}
-        contentContainerStyle={{ paddingHorizontal: (screenWidthbb - ITEM_WIDTH) / 2
-            // ,backgroundColor:'blue'         // just for testing bb
-        }}       // 400-340=60 /2=30 ...left and right side will get 30 padding
-
-        getItemLayout={(data, index) => (
-            { length: ITEM_WIDTH, offset: ITEM_WIDTH * index, index }
-        )}
-                // GO TO😝-->:D:\Coding Playground\Extra code\not just dev Extra Code\Airbnb Clone Explanation code\2.getItemLayout.md
         />
-     
       </View>
 
     

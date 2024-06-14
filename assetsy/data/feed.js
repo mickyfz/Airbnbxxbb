@@ -9,6 +9,7 @@ export default [
     bedroom: 3,
     oldPrice: 25,
     newPrice: 20,
+    // newPrice: 10,
     totalPrice: 120,
     coordinate: {
       latitude: 28.3915637,
@@ -25,6 +26,7 @@ export default [
     bedroom: 2,
     oldPrice: 76,
     newPrice: 65,
+    // newPrice: 20,
     totalPrice: 390,
     coordinate: {
       latitude: 28.4815637,
@@ -41,6 +43,7 @@ export default [
     bedroom: 1,
     oldPrice: 64,
     newPrice: 55,
+    // newPrice: 30,
     totalPrice: 330,
     coordinate: {
       latitude: 28.2515637,
@@ -57,6 +60,7 @@ export default [
     bedroom: 3,
     oldPrice: 120,
     newPrice: 100,
+    // newPrice: 40,
     totalPrice: 600,
     coordinate: {
       latitude: 28.4815637,

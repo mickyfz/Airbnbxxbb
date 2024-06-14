@@ -4,7 +4,6 @@ import { Marker } from "react-native-maps";
     
 
 const CustomMarkerCompbb = (propy) => {
-// const CustomMarkerCompbb = React.memo((propy) => {         // You don't memoize it because I saw then button clicks sometimes. don't work ... Added these don't solve the marker blinking problem. ....Don't worry you don't turn rendered the marker again and again.... please see 'kk' value on terminal if you don't trust me 😘
     const { coordinate, price, onPressff, isSelected } = propy;
     console.log('kk',isSelected);
     return (
@@ -25,6 +24,5 @@ const CustomMarkerCompbb = (propy) => {
         </Marker>
       );
 }
-// })
 
 export default CustomMarkerCompbb
