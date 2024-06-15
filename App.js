@@ -13,6 +13,10 @@ import DestinationSearchScrnbb from './srcy/screensy/DestinationSearchy';
 import GuestScrnbb from './srcy/screensy/Guestsy';
 import Routerbb from './srcy/natigationy/Routery';
 
+import {
+  withAuthenticator,
+  useAuthenticator
+} from '@aws-amplify/ui-react-native';
 
 const App = () => {
 // const App: () => React$Node = () => {
@@ -39,5 +43,5 @@ return (
 
 
 
-export default  App;
+export default  withAuthenticator(App);
 

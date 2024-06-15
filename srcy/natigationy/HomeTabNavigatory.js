@@ -11,6 +11,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import SearchResultScrnbb from '../screensy/SearchResultsy';
 import ExploreNavigatorbb from './ExploreNavigatory';
+import ProfileScreenbb from '../screensy/Profiley';
 
 
 const Taby = createBottomTabNavigator();
@@ -79,7 +80,8 @@ return (
 
       <Taby.Screen
         name={'profile'}
-        component={HomeScreenbb}
+        // component={HomeScreenbb}
+        component={ProfileScreenbb}
         options={{
           tabBarIcon: ({color}) => (
           
