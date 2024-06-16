@@ -3,8 +3,12 @@ import React from 'react'
 import stylesbb from './stylesy'
 
 // copied from Posty GO TO😝-->:D:\Coding Playground\not.just.dev code bb\Airbnbxxbb\srcy\componentsy\Posty\index.js baby
+
+const days = 7;
+
 const DetailPostCompbb = (propsy) => {
-  const propbb=propsy.postpp;
+  // const propbb=propsy.postpp;
+  const propbb=propsy.postpp.data.getPostifybb;
   console.log('propy',propbb);
   return (
     <ScrollView style={stylesbb.containery}>
@@ -32,7 +36,7 @@ const DetailPostCompbb = (propsy) => {
       </Text>
 
       {/*  SECTION:   Total price */}
-      <Text style={stylesbb.totalPrice}> ${propbb.totalPrice} total </Text>
+      <Text style={stylesbb.totalPrice}> ${propbb.newPrice * days} total </Text>
 
       {/* NOTE:extra added */}
       <Text style={stylesbb.longDescrips}>{propbb.description}</Text>

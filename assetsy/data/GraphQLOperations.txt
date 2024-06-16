@@ -105,6 +105,28 @@ mutation createAccomodation5 {
   },
 }
 
+mutation createAccomodation6 {
+  createPostifybb(input: {
+    image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
+    type: "Garage",
+    title: "Steve Jobs Garage",
+    description: "The OG Garage where Steve Jobs started Apple",
+
+    bed: 1,
+    bedroom: 1,
+    maxGuests: 2,
+
+    oldPrice: 175,
+    newPrice: 170,
+
+    latitude: 37.400093744608355,
+    longitude: -122.12083487,
+  }) {
+    id
+  },
+}
+
+
 query showAllProperties {
   listPostifybbs {
     items {
@@ -115,14 +137,18 @@ query showAllProperties {
   }
 }
 
+
 query showPropertiesBasedOnLocation {
   listPostifybbs(filter: {
     and: {
+      maxGuests: {
+        ge: 3
+      }, 
       latitude: {
-        between: [27.99643616103738, 28.617893425551618], # Tenerife bounderies
+        between: [27.99643616103738, 28.617893425551618]
       }
       longitude: {
-        between: [-16.945665756405603, -16.134050770346267], # Tenerife bounderies
+        between: [-16.945665756405603, -16.134050770346267]
       }
     }
   }) {

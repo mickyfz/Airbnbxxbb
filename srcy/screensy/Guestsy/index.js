@@ -1,7 +1,7 @@
 import { View, Text,Pressable, Button, } from 'react-native'
 import React,{useState} from 'react'
 import stylesbb from './stylesy'
-import {  useNavigation } from '@react-navigation/native'
+import {  useNavigation,useRoute } from '@react-navigation/native'
 
 
 // Airbnbxxbb\srcy\screensy\Guestsy\index.js --->OwnBaby
@@ -33,6 +33,9 @@ const GuestScrnbb = () => {
     },
 
   ]
+
+  const route = useRoute();
+  // console.log('route---->',route.params.viewportgg);
     return (
       <View style={{justifyContent:'space-between',height:'100%'}}>
             {/* we did it so that our button can show at the last. */}
@@ -53,7 +56,7 @@ const GuestScrnbb = () => {
           borderRadius:15
       }} 
       // My version own explore: GENIUS:
-      onPress={()=>navigation.navigate('SrchRsltTabNm')}     
+      onPress={()=>navigation.navigate('SrchRsltTabNm',{viewportgt:route.params.viewportgg,guestgt:numAdlt+numChildrn})}     
 
       // His version...BOTH works baby
       // onPress={()=>navigation.navigate('HomeTabNm', {

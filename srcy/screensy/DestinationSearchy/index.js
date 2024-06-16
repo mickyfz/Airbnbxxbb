@@ -21,7 +21,7 @@ const DestinationSearchScrnbb = () => {
       onPress={(data, details = null) => {
         // 'details' is provided when fetchDetails = true
         console.log(data, details);
-        navigation.navigate('GuestNm')
+        navigation.navigate('GuestNm', { viewportgg: details.geometry.viewport })
       }}
       styles={{
         textInput: stylesbb.inputTexty,     // Giving our customer styleto the input box.

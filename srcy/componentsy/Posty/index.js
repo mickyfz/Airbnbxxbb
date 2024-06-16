@@ -3,6 +3,8 @@ import React from 'react'
 import stylesbb from './stylesy'
 import { useNavigation } from '@react-navigation/native';
 
+const days = 7;
+
 const Postbb = (propsy) => {
   // const propbb=propsy['feedy'][2];
   const propbb=propsy.feedy;
@@ -40,7 +42,7 @@ const Postbb = (propsy) => {
       </Text>
 
       {/*  SECTION:   Total price */}
-      <Text style={stylesbb.totalPrice}> ${propbb.totalPrice} total </Text>
+      <Text style={stylesbb.totalPrice}> ${propbb.newPrice * days} total </Text>
     </Pressable>
   )
 }
