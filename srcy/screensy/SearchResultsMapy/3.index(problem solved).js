@@ -27,8 +27,8 @@ const SearchResultsMapbb = () => {
         debounce(({ viewableItems }) => {
             if (viewableItems.length > 0 && !isScrollingRef.current) {
                 const selectedPlacey = viewableItems[0].item;
-                if (selectedPlaceId !== selectedPlacey.idy) {
-                    setSelectedPlaceId(selectedPlacey.idy);
+                if (selectedPlaceId !== selectedPlacey.id) {
+                    setSelectedPlaceId(selectedPlacey.id);
                     console.log('actual view changed');
                 }
             }
@@ -45,7 +45,7 @@ const SearchResultsMapbb = () => {
         }
 
         console.log('selectedPlaceId', selectedPlaceId);
-        const index = Placesbb.findIndex(place => place.idy === selectedPlaceId);
+        const index = Placesbb.findIndex(place => place.id === selectedPlaceId);
 
         if (index !== -1) {
             console.log('Matched');
@@ -97,11 +97,11 @@ const SearchResultsMapbb = () => {
             >
                 {markersMemoy.map(placey => (
                     <CustomMarkerCompbb
-                        key={placey.idy}
+                        key={placey.id}
                         coordinate={placey.coordinate}
                         price={placey.newPrice}
-                        isSelected={placey.idy === selectedPlaceId}
-                        onPressff={() => debouncedOnPressbb(placey.idy)}
+                        isSelected={placey.id === selectedPlaceId}
+                        onPressff={() => debouncedOnPressbb(placey.id)}
                     />
                 ))}
             </MapView>
@@ -113,7 +113,7 @@ const SearchResultsMapbb = () => {
                     renderItem={({ item }) => (
                         <PostCarouselItemCompbb feedy={item} />
                     )}
-                    keyExtractor={itz => itz.idy}
+                    keyExtractor={itz => itz.id}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     viewabilityConfig={viewConfigbb.current}

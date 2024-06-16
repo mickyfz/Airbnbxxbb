@@ -10,6 +10,11 @@ import PostCarouselItemCompbb from '../../componentsy/PostCarouselItemCompy';
 
 import { debounce } from 'lodash';
 
+import { listPostifybbs } from '../../../src/graphql/queries';
+import { generateClient, post } from 'aws-amplify/api';
+
+const client = generateClient();
+
 const SearchResultsMapbb = () => {
   
     const [selectedPlaceId, setSelectedPlaceId] = useState(null);
@@ -100,8 +105,35 @@ const SearchResultsMapbb = () => {
     //   }
     // }, []);
 
-    // Memoize the markers data to prevent re-renders
+ 
+
+
+  const [postsbb, setPostsbb] = useState([]);
+  console.log('postbb',postsbb);
+  useEffect(() => {
+    const fetchPostsbb = async () => {
+      try {             // it's recommended to use try catch block when you requesting on the internet
+
+        // his code is not valid ... was fucking difficult to digest https://docs.amplify.aws/gen1/react-native/build-a-backend/graphqlapi/set-up-graphql-api/
+        // const postsResult = await API.graphql(
+        //   graphqlOperation(listPostifybbs)
+        // )
+        const postsResult = await client.graphql({query:listPostifybbs})
+
+        setPostsbb(postsResult.data.listPostifybbs.items);
+        console.log('api called successfull',postsbb);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    fetchPostsbb();
+  }, [])
+
+  // Memoize the markers data to prevent re-renders
   const markersMemoy = useMemo(() => Placesbb, [Placesbb]);
+  // const markersMemoy = useMemo(() => postsbb, [postsbb]);
+
   return (
 
     <View>
@@ -120,10 +152,12 @@ const SearchResultsMapbb = () => {
 
       {/* We are not putting code here so that it looks clean. */}
       {/* {Placesbb.map(placey => ( */}
+      {/* { markersMemoy.length > 0 && markersMemoy.map(placey => ( */}
       {markersMemoy.map(placey => (
           <CustomMarkerCompbb
           key={placey.id}
-          coordinate={placey.coordinate}
+          // coordinate={placey.coordinate}
+          coordinate={{ latitude: placey.latitude, longitude: placey.longitude }}
           price={placey.newPrice}
           isSelected={placey.id === selectedPlaceId}
 
@@ -151,7 +185,7 @@ const SearchResultsMapbb = () => {
 
         // GO TO😝-->:code stepbystep - [ANSWER-9::](#answer-9) 
         // snapToInterval={screenWidthbb - 60}
-        snapToAlignment={"center"}
+        snapToAlignment={"center"}           // it doesn't matter here
         decelerationRate={"fast"}
 
         viewabilityConfig={
@@ -162,6 +196,14 @@ const SearchResultsMapbb = () => {
 
 
         snapToInterval={ITEM_WIDTH}
+        contentContainerStyle={{ paddingHorizontal: (screenWidthbb - ITEM_WIDTH) / 2
+            // ,backgroundColor:'blue'         // just for testing bb
+        }}       // 400-340=60 /2=30 ...left and right side will get 30 padding
+
+        getItemLayout={(data, index) => (
+            { length: ITEM_WIDTH, offset: ITEM_WIDTH * index, index }
+        )}
+                // GO TO😝-->:D:\Coding Playground\Extra code\not just dev Extra Code\Airbnb Clone Explanation code\2.getItemLayout.md
         />
      
       </View>

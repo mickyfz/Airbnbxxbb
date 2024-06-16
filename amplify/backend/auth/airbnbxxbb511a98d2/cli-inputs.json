@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "airbnbxxbbb765fbcc_identitypool_b765fbcc",
+    "identityPoolName": "airbnbxxbb511a98d2_identitypool_511a98d2",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "airbnbb765fbcc",
-    "userPoolName": "airbnbxxbbb765fbcc_userpool_b765fbcc",
+    "resourceNameTruncated": "airbnb511a98d2",
+    "userPoolName": "airbnbxxbb511a98d2_userpool_511a98d2",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "airbnbb765fbcc_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "airbnb511a98d2_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "b765fbcc",
-    "resourceName": "airbnbxxbbb765fbcc",
+    "sharedId": "511a98d2",
+    "resourceName": "airbnbxxbb511a98d2",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],

@@ -25,8 +25,8 @@ const SearchResultsMapbb = () => {
       if (viewableItems.length > 0) {    // that means we are seeing atleat 1 item in the screen
         const selectedPlacey = viewableItems[0].item;
         // console.log('selectedPlacey',selectedPlacey);
-        console.log('selectedPlacey id',selectedPlacey.idy);
-        setSelectedPlaceId(selectedPlacey.idy);
+        console.log('selectedPlacey id',selectedPlacey.id);
+        setSelectedPlaceId(selectedPlacey.id);
       }
     })
 
@@ -38,7 +38,7 @@ const SearchResultsMapbb = () => {
         return;
       }
       console.log('selectedPlaceId',selectedPlaceId ,'--------------' );
-      const index = Placesbb.findIndex(place => place.idy === selectedPlaceId)     // to Understand GO TO😝-->: Extra code\Javascript Extra Code\2bb.js
+      const index = Placesbb.findIndex(place => place.id === selectedPlaceId)     // to Understand GO TO😝-->: Extra code\Javascript Extra Code\2bb.js
 
       if (index !== -1) {    // own explore: that means no idy match
         console.log('Matched');
@@ -80,15 +80,15 @@ const SearchResultsMapbb = () => {
       {/* We are not putting code here so that it looks clean. */}
       {Placesbb.map(placey => (
           <CustomMarkerCompbb
-          key={placey.idy}
+          key={placey.id}
           coordinate={placey.coordinate}
           price={placey.newPrice}
-          isSelected={placey.idy === selectedPlaceId}
+          isSelected={placey.id === selectedPlaceId}
 
-          onPressff={() => setSelectedPlaceId(placey.idy)}
+          onPressff={() => setSelectedPlaceId(placey.id)}
 
-          // onPressff={() =>{ setSelectedPlaceId(placey.idy);}}
-          // onPress={() =>{ setSelectedPlaceId(placey.idy); console.log('idy  ',selectedPlaceId,typeof(setSelectedPlaceId)); console.log('idy2 ',placey.idy,typeof(placey.idy));console.log(placey.idy === selectedPlaceId);}}
+          // onPressff={() =>{ setSelectedPlaceId(placey.id);}}
+          // onPress={() =>{ setSelectedPlaceId(placey.id); console.log('idy  ',selectedPlaceId,typeof(setSelectedPlaceId)); console.log('idy2 ',placey.id,typeof(placey.id));console.log(placey.id === selectedPlaceId);}}
                                               // Just for debugging baby.
           />)
       )}
@@ -102,7 +102,7 @@ const SearchResultsMapbb = () => {
         renderItem={({item})=>(
           <PostCarouselItemCompbb feedy={item} />
         )}
-        keyExtractor={itz=>itz.idy} 
+        keyExtractor={itz=>itz.id} 
 
         horizontal                      // horizontal={true}: This property instructs the <FlatList> to render the list items horizontally instead of the default vertical orientation. This creates a carousel-like effect.
         showsHorizontalScrollIndicator={false}                   //showsHorizontalScrollIndicator={false}: This property hides the default horizontal scroll indicator that appears at the bottom of the list when there's more content than can be displayed on the screen. Since you might have custom scroll behavior, hiding this indicator provides a cleaner visual experience.

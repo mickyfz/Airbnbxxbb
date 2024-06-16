@@ -11,7 +11,7 @@ const Postbb = (propsy) => {
   const navigation = useNavigation();
 
   const goToDetailPostPagebb = () => {
-    navigation.navigate('PostDtlNm', {postIdpp: propbb.idy});
+    navigation.navigate('PostDtlNm', {postIdpp: propbb.id});
   }
 
   return (

@@ -9,8 +9,8 @@ import DetailPostCompbb from "../../componentsy/DetailedPostCompy";
 const PostDetailScreenbb = (props) => {
   const route = useRoute();
 
-  const postkk = placesbb.find(place => place.idy === route.params.postIdpp);
-//   const postkk = placesbb.find(place => place.idy === '0');
+  const postkk = placesbb.find(place => place.id === route.params.postIdpp);
+//   const postkk = placesbb.find(place => place.id === '0');
 
   return (
     <View style={{backgroundColor: 'white'}}>

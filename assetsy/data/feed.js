@@ -1,6 +1,7 @@
 export default [
   {
-    idy: '0',
+    // idy: '0',      // i changed idy --> id because it don't generate auto ID! in graphql despite giving `ID!` or `ID`
+    id: '0',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
     type: 'Private Room',
     title: 'Bright room in the heart of the city',
@@ -11,13 +12,13 @@ export default [
     newPrice: 20,
     // newPrice: 10,
     totalPrice: 120,
-    coordinate: {
+   
       latitude: 28.3915637,
       longitude: -16.6291304,
-    },
+    
   },
   {
-    idy: '1',
+    id: '1',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',
     type: 'Entire Flat',
     title: 'NEW lux. apartment in the center of Santa Cruz',
@@ -28,13 +29,13 @@ export default [
     newPrice: 65,
     // newPrice: 20,
     totalPrice: 390,
-    coordinate: {
+   
       latitude: 28.4815637,
       longitude: -16.2291304,
-    },
+    
   },
   {
-    idy: '2',
+    id: '2',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg',
     type: 'Private Property',
     title: 'Green House Santa Cruz',
@@ -45,13 +46,13 @@ export default [
     newPrice: 55,
     // newPrice: 30,
     totalPrice: 330,
-    coordinate: {
+   
       latitude: 28.2515637,
       longitude: -16.3991304,
-    },
+    
   },
   {
-    idy: '3',
+    id: '3',
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
     type: 'Entire Flat',
     title: 'Typical canarian house',
@@ -62,9 +63,9 @@ export default [
     newPrice: 100,
     // newPrice: 40,
     totalPrice: 600,
-    coordinate: {
+   
       latitude: 28.4815637,
       longitude: -16.2991304,
-    },
+    
   },
 ];

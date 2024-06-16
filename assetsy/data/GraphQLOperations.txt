@@ -1,5 +1,5 @@
 mutation createAccomodation1 {
-  createPost(input: {
+  createPostifybb(input: {
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
     type: "Private Room",
     title: "Bright room in the heart of the city",
@@ -19,8 +19,10 @@ mutation createAccomodation1 {
   },
 }
 
+
+
 mutation createAccomodation2 {
-  createPost(input: {
+  createPostifybb(input: {
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
     type: "Entire Flat",
     title: "NEW lux. apartment in the center of Santa Cruz",
@@ -41,7 +43,7 @@ mutation createAccomodation2 {
 }
 
 mutation createAccomodation3 {
-  createPost(input: {
+  createPostifybb(input: {
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/3.jpg",
     type: "Private Property",
     title: "Green House Santa Cruz",
@@ -62,7 +64,7 @@ mutation createAccomodation3 {
 }
 
 mutation createAccomodation4 {
-  createPost(input: {
+  createPostifybb(input: {
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg",
     type: "Entire Flat",
     title: "Typical canarian house",
@@ -83,8 +85,8 @@ mutation createAccomodation4 {
 }
 
 mutation createAccomodation5 {
-  createPost(input: {
-    image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/5.jpg",
+  createPostifybb(input: {
+    image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
     type: "Garage",
     title: "Steve Jobs Garage",
     description: "The OG Garage where Steve Jobs started Apple",
@@ -104,7 +106,7 @@ mutation createAccomodation5 {
 }
 
 query showAllProperties {
-  listPosts {
+  listPostifybbs {
     items {
       id
       title
@@ -114,7 +116,7 @@ query showAllProperties {
 }
 
 query showPropertiesBasedOnLocation {
-  listPosts(filter: {
+  listPostifybbs(filter: {
     and: {
       latitude: {
         between: [27.99643616103738, 28.617893425551618], # Tenerife bounderies
