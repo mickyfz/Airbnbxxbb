@@ -79,8 +79,10 @@ const SearchResultsMapbb = (propM) => {
         const region = {
           latitude: selectedPlacey.latitude,
           longitude: selectedPlacey.longitude,
-          latitudeDelta: 0.8,
-          longitudeDelta: 0.8,
+          // latitudeDelta: 0.8,
+          // longitudeDelta: 0.8,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
         }
         mapRefy.current.animateToRegion(region);
         // animateToRegionbb(region)

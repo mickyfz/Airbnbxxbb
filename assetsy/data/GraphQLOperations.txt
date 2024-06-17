@@ -63,6 +63,52 @@ mutation createAccomodation3 {
   },
 }
 
+mutation createAccomodation42 {
+  createPostifybb(input: {
+    image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg",
+    type: "Entire Flat",
+    title: "Typical canarian house",
+    description: "Typical canarian house Lorem Ipsum is simply dummy text",
+
+    bed: 3,
+    bedroom: 2,
+    maxGuests: 6,
+
+    oldPrice: 131,
+    newPrice: 111,
+
+    latitude: 28.4776613,
+    longitude: -16.29488,
+  }) {
+    id
+  },
+}
+
+
+mutation createAccomodation43 {
+  createPostifybb(input: {
+    image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg",
+    type: "Entire Flat",
+    title: "Typical canarian house",
+    description: "Typical canarian house Lorem Ipsum is simply dummy text",
+
+    bed: 3,
+    bedroom: 2,
+    maxGuests: 11,
+
+    oldPrice: 132,
+    newPrice: 112,
+
+    latitude: 28.4726613,
+    longitude: -16.29488,
+  }) {
+    id
+  },
+}
+
+
+
+
 mutation createAccomodation4 {
   createPostifybb(input: {
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg",
@@ -83,6 +129,7 @@ mutation createAccomodation4 {
     id
   },
 }
+
 
 mutation createAccomodation5 {
   createPostifybb(input: {
@@ -119,8 +166,8 @@ mutation createAccomodation6 {
     oldPrice: 175,
     newPrice: 170,
 
-    latitude: 37.400093744608355,
-    longitude: -122.12083487,
+    latitude: 37.420093744608355,
+    longitude: -122.13083487,
   }) {
     id
   },
